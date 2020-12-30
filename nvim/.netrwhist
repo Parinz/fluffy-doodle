@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/parin/.config/nvim'
+let g:netrw_dirhist_3='/home/parin/Documents/Projects/C-lang'
+let g:netrw_dirhist_2='/home/parin/Documents/Projects/Flask-Grade-Calculator'
+let g:netrw_dirhist_1='/home/parin/Documents/Projects/pwa-mobile-renweb'
+let g:netrw_dirhist_0='/home/parin'
+let g:netrw_dirhist_9='/home/parin/.config/waybar'
+let g:netrw_dirhist_8='/home/parin/.config'
+let g:netrw_dirhist_7='/home/parin'
+let g:netrw_dirhist_6='/home/parin/.config/waybar'
+let g:netrw_dirhist_5='/home/parin/.config'

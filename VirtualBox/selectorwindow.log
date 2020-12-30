@@ -1,0 +1,18 @@
+00:00:00.638260 VirtualBox GUI VM Selector Window 6.1.10_Ubuntu r138449 linux.amd64 (Jun  6 2020 11:31:37) release log
+00:00:00.638265 Log opened 2020-12-19T03:52:54.966697000Z
+00:00:00.638267 Build Type: release
+00:00:00.638276 OS Product: Linux
+00:00:00.638279 OS Release: 5.10.1-surface
+00:00:00.638282 OS Version: #1 SMP Wed Dec 16 16:34:50 UTC 2020
+00:00:00.638342 DMI Product Name: Surface Laptop 2
+00:00:00.638363 DMI Product Version: 124000000000000000000000D:F B:0CA56369 F:U C:0A P:C1 S:01 
+00:00:00.638382 Firmware type: UEFI
+00:00:00.638975 Secure Boot: Enabled
+00:00:00.639093 Host RAM: 7880MB (7.6GB) total, 5537MB (5.4GB) available
+00:00:00.639104 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.639105 Process ID: 41820
+00:00:00.639107 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.639169 Qt version: 5.12.8
+00:00:00.693023 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.693082 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:01.552642 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 0x28 x 1803x1174

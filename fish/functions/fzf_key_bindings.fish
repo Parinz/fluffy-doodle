@@ -1,0 +1,1 @@
+/home/parin/.fzf/shell/key-bindings.fish

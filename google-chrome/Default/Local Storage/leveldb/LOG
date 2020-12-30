@@ -1,0 +1,9 @@
+2020/12/26-16:12:37.784 3 Reusing MANIFEST /home/parin/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
+2020/12/26-16:12:37.785 3 Recovering log #3
+2020/12/26-16:12:37.786 3 Reusing old log /home/parin/.config/google-chrome/Default/Local Storage/leveldb/000003.log 
+2020/12/26-19:56:52.285 5 Level-0 table #5: started
+2020/12/26-19:56:52.313 5 Level-0 table #5: 383528 bytes OK
+2020/12/26-19:56:52.323 5 Delete type=0 #3
+2020/12/26-19:57:54.470 7 Level-0 table #7: started
+2020/12/26-19:57:54.479 7 Level-0 table #7: 38289 bytes OK
+2020/12/26-19:57:54.489 7 Delete type=0 #4

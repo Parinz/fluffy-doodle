@@ -1,0 +1,3 @@
+[2020-12-18 23:56:07.130] [sharedprocess] [info] main {"machineId":"f93abaa9bd417e716497d20bc1edf4b977c1676ffdd86ff181913099423a527a","windowId":2}
+[2020-12-18 23:56:07.238] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/parin/.config/Code - Insiders/User/snippets'
+[2020-12-18 23:56:47.149] [sharedprocess] [info] Starting to clean up unused language packs.

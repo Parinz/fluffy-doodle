@@ -1,0 +1,2 @@
+[2020-12-21 19:39:27.904] [sharedprocess] [info] main {"machineId":"f93abaa9bd417e716497d20bc1edf4b977c1676ffdd86ff181913099423a527a","windowId":2}
+[2020-12-21 19:39:28.052] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/parin/.config/Code - Insiders/User/snippets'

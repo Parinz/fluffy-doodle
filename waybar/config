@@ -1,0 +1,180 @@
+{
+  // "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)		
+  // "height": 30, // Waybar height (to be removed for auto height)
+  // "width": 2560, // Waybar width
+  // Choose the order of the modules
+  "modules-left": ["river/tags", "sway/workspaces"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["pulseaudio", "disk", "memory", "cpu", "network", "battery", "backlight", "clock", "custom/power"],
+  // Modules configuration
+  "sway/workspaces": {
+   "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": []
+   },
+    "format-icons": {
+      "1": "F",
+      "2": "C",
+      "3": "T",
+      "4": "R",
+      "focused": "",
+      "urgent": "",
+      "default": ""
+    },
+    "icon-size": 30
+  },
+  "custom/media": {
+    "format": "{icon}{}",
+    "return-type": "json",
+    "format-icons": {
+      "Playing": "   ",
+      "Paused": "   ",
+      "Music": "   "
+    },
+    "max-length":55,
+    "interval": 1,
+    "exec": "fish -c playerstatus | tail -1",
+    "exec-on-event": "fish -c playerstatus | tail -1",
+    "on-click": "$HOME/.config/waybar/scripts/mediaplayer.sh"
+  },
+  "river/tags": {
+    "num-tags": 6
+  },
+  "custom/recorder": {
+    "return-type": "json",
+    "format": "壘",
+    "interval": 1,
+		"exec-if": "pgrep wf-recorder",
+		"exec": "echo '{\"class\": \"recording\"}'",
+    "on-click": "fish -c recording",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "clock": {
+    "timezone": "Asia/Bangkok",
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %B %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}  ",
+    "on-click": "alacritty -e ytop",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}  "
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}  {icon}",
+    "interval": 60,
+    "format-icons": ["", "", ""]
+  },
+  "backlight": {
+    "interval": 5,
+    "format": "{icon}",
+    "format-alt": "{percent}% {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": ["🌕", "🌔", "🌓", "🌒", "🌑"],
+    "on-scroll-down": "brightnessctl -c backlight set +5%",
+    "on-scroll-up": "brightnessctl -c backlight set 5%-"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "network": {
+    "interface": "wlp2s0", // (Optional) To force the use of this interface
+    "format-wifi": "   connected",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 60,
+    "on-click-middle": "exec alacritty -e nmtui"
+  },
+  "pulseaudio": {
+    "scroll-step": 1, // %, can be a float
+    "format": "{icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["","   5%","   10%","   15%","   20%","   25%","   30%","   35%","   40%","   45%","   50%","   55%","   60%","   65%","   70%","   75%","   80%","   85%","   95%","   100%"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
+    "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh Terrebonne",
+    "format": "{}",
+    "return-type": "json",
+    "interval": 600
+  },
+  "custom/pacman": {
+    "format": "{}  ",
+    "interval": 3600, // every hour
+    // "restart-interval": 3600,
+    "exec": "checkupdates | wc -l", // # of updates
+    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{free}",
+    "path": "/"
+  },
+  "wlr/taskbar": {
+    // "format": "{icon}",
+    "format": "{app_id}",
+    "icon-theme": "Papirus",
+    "icon-size": 15,
+    "on-click": "activate",
+    "markup": true,
+    "max-length": 7,
+    "on-click-right": "minimize",
+    "on-click-middle": "close"
+  }
+}
